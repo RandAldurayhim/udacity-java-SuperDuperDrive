@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
 
 public class HomePage {
     @FindBy(id="logoutButton")
@@ -39,7 +38,7 @@ public class HomePage {
     private WebElement noteTitle;
     @FindBy(id="noteDescription" )
     private WebElement noteDescription;
-    private JavascriptExecutor jE;
+    private final JavascriptExecutor jE;
     @FindBy(id = "editNoteButton")
     private WebElement editNoteButton;
     @FindBy(id = "deleteNoteButton")

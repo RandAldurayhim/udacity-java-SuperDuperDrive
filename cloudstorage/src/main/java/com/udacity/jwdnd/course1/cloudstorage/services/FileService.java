@@ -31,4 +31,7 @@ public class FileService {
         return fileMapper.getAllByUserId(userId);
     }
 
+    public int countByFilenameAndUserId(String fileName, Integer userId){
+        return fileMapper.countByFilenameAndUserId(fileName,userId);
+    }
 }

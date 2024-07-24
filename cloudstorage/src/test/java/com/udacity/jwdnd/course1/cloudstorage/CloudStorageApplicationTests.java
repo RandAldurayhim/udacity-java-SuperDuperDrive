@@ -2,12 +2,10 @@ package com.udacity.jwdnd.course1.cloudstorage;
 
 import com.udacity.jwdnd.course1.cloudstorage.pageObjects.HomePage;
 import com.udacity.jwdnd.course1.cloudstorage.pageObjects.LoginPage;
-import com.udacity.jwdnd.course1.cloudstorage.pageObjects.ResultPage;
 import com.udacity.jwdnd.course1.cloudstorage.pageObjects.SignupPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,12 +33,12 @@ class CloudStorageApplicationTests {
 
 	@BeforeEach
 	public void beforeEach() {
-		this.driver = new ChromeDriver();
+		driver = new ChromeDriver();
 	}
 
 	@AfterEach
 	public void afterEach() {
-		if (this.driver != null) {
+		if (driver != null) {
 			driver.quit();
 		}
 	}

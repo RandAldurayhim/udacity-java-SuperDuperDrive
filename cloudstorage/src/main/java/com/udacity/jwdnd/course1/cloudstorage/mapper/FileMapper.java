@@ -23,4 +23,8 @@ public interface FileMapper {
 
     @Select("SELECT * FROM FILES WHERE userId = #{userId}")
     List<File> getAllByUserId(Integer userId);
+
+    @Select("SELECT COUNT(*) FROM FILES WHERE filename = #{fileName} AND userId = #{userId}")
+    int countByFilenameAndUserId(String fileName, Integer userId);
+
 }

@@ -12,17 +12,11 @@ public class HomeService {
     private final NoteService noteService;
     private final FileService fileService;
     private final CredentialService credentialService;
-    private final UserService userService;
 
-    public HomeService(NoteService noteService, FileService fileService, CredentialService credentialService,UserService userService) {
+    public HomeService(NoteService noteService, FileService fileService, CredentialService credentialService) {
         this.noteService = noteService;
         this.fileService = fileService;
         this.credentialService = credentialService;
-        this.userService=userService;
-    }
-
-    public Integer getUserIdByUsername( String username){
-        return this.userService.getUser(username).getUserId();
     }
 
     public List<Note> getNotesByUserId(Integer userId){
@@ -35,38 +29,6 @@ public class HomeService {
 
     public List<File> getFilesByUserId(Integer userId){
         return this.fileService.getFilesByUserId(userId);
-    }
-
-    public void addFile(File file){
-        this.fileService.saveFile(file);
-    }
-
-    public Integer saveNote(Note note){
-        return this.noteService.saveNote(note);
-    }
-
-    public Integer saveCred(Credential credential){
-        return this.credentialService.saveCredential(credential);
-    }
-
-    public void deleteNote(Integer noteId){
-        this.noteService.deleteNote(noteId);
-    }
-
-    public void deleteCred(Integer credId){
-        this.credentialService.deleteCredential(credId);
-    }
-
-    public void deleteFile(Integer fileId){
-        this.fileService.deleteFile(fileId);
-    }
-
-    public File getFileById(Integer fileId){
-        return this.fileService.getFileById(fileId);
-    }
-
-    public Credential getCredById(Integer id){
-        return this.credentialService.getCredById(id);
     }
 
 }

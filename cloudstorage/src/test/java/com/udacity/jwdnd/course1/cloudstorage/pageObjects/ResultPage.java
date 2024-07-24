@@ -11,8 +11,7 @@ public class ResultPage {
 
     @FindBy(css = "span a[th:href='@{/home}']") // Targets anchor tag with specific href value
     private WebElement hereLink;
-    private JavascriptExecutor jE;
-    private Wait wait;
+    private final JavascriptExecutor jE;
 
 
     public ResultPage(WebDriver driver) {
